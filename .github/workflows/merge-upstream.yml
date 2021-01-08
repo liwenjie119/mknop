@@ -1,0 +1,40 @@
+#
+# This is free software, lisence use MIT.
+# 
+# Copyright (C) 2019 KFERMercer <KFER.Mercer@gmail.com>
+# 
+# <https://github.com/KFERMercer/OpenWrt-CI>
+#
+
+name: Merge-upstream
+
+on:
+  schedule:
+    - cron: 0 7 * * 5
+
+jobs:
+  merge:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@main
+      with:
+        ref: master
+        fetch-depth: 0
+        lfs: true
+
+    - name: Set git identity
+      run : |
+            git config --global user.email "liwenjie119@126.com"
+            git config --global user.name "liwenjie119"
+            
+    #- name: Load upstream commits
+    #  run: git pull https://github.com/tuanqing/mknop.git --no-edit --strategy-option ours
+
+    - name: Push Commits
+      env:
+        DOWNSTREAM_BRANCH: master
+      run: git push origin $DOWNSTREAM_BRANCH
