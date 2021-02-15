@@ -1,7 +1,7 @@
 # 自动构建斐讯 N1、微加云、贝壳云、我家云、S9xxx OpenWrt 固件脚本
 # Automatically Build OpenWrt Firmware for Phicomm n1, Vplus, Beikeyun, L1 Pro, S9xxx etc
 
-**制作脚本已部署到 Github Action，真正实现一栈式全自动构建，每周六早上六点准时为你构建，无须自行制作，下载即可用**
+**制作脚本已部署到 Github Action，真正实现一栈式全自动构建，每周六早上五点准时为你构建，无须自行制作，下载即可用**
 
 [![OpenWrt-CI](https://github.com/tuanqing/mknop/workflows/OpenWrt-CI/badge.svg?branch=master)](https://github.com/tuanqing/mknop/actions)  
  👆👆👆&nbsp; &nbsp; 戳上面查看构建状态
