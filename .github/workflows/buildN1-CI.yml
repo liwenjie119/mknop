@@ -89,4 +89,8 @@ jobs:
             curl -sL https://git.io/file-transfer | bash -s beta
             ./transfer cow --block 2621440 -s -p 64 --no-progress out/phicomm-n1 2>&1 | tee cowtransfer.log
             echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
- 
+      - name: Delete workflow runs
+        uses: GitRML/delete-workflow-runs@main
+        with:
+          retain_days: 1
+          keep_minimum_runs: 3
