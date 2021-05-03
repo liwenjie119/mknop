@@ -66,6 +66,7 @@ jobs:
       - name: Build firmware
         run: |
           cp lede/bin/targets/*/*/*.tar.gz ./openwrt
+          cp lede/bin/targets/*/*/*.tar.gz ./out
           sudo ./gen_openwrt -d -k latest -m phicomm-n1 -s 700
           
           devices=("phicomm-n1")
@@ -77,7 +78,7 @@ jobs:
             cd ../
             echo "firmware_$x=$filename" >> $GITHUB_ENV
           done
-          cp lede/bin/targets/*/*/*.tar.gz ./out
+          
       - name: Upload firmware @ phicomm n1
         uses: actions/upload-artifact@main
         with:
