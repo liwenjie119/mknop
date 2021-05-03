@@ -77,7 +77,7 @@ jobs:
             cd ../
             echo "firmware_$x=$filename" >> $GITHUB_ENV
           done
-
+          cp lede/bin/targets/*/*/*.tar.gz ./out
       - name: Upload firmware @ phicomm n1
         uses: actions/upload-artifact@main
         with:
